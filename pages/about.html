@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Sweet Blush</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">Sweet<span>Blush</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Menu</a></li>
+    <li><a href="order.html">Order</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn btn-pink cart-btn" id="openCart">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <h1>Our Story</h1>
+  <p>A little bakery with a whole lot of heart</p>
+</div>
+
+<section>
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="../images/about.jpeg" alt="Beautiful cake">
+    </div>
+    <div class="about-text">
+      <h2>From a home kitchen to your heart</h2>
+      <p>Sweet Blush started as a weekend hobby - a passion project born out of love for baking and a belief that homemade always tastes better. What began as cakes for friends and family quickly grew into something far sweeter.</p>
+      <p>Every recipe we use has been tested, tweaked, and tasted dozens of times. We use only real butter, fresh eggs, high-quality chocolate, and no shortcuts. When you bite into a Pinkeria cookie or cake, you're tasting years of practice and a genuine love for the craft.</p>
+      <p>We bake in small batches so every item is as fresh as it can be. Orders are prepared on the day of delivery whenever possible. Because we believe you deserve something that was made just for you — not sitting on a shelf.</p>
+      <a href="products.html" class="btn btn-pink" style="margin-top:1rem;">Browse Our Menu</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pink-light">
+  <div class="section-header">
+    <h2>What We Stand For</h2>
+    <p>Three simple things that guide everything we bake</p>
+    <div class="pink-line"></div>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon"><center><img src="../images/ingredients.svg" alt ="ingredients" height="30px" width="30px"></center></div>
+      <h3>Real Ingredients</h3>
+      <p>No artificial flavours or preservatives. Every ingredient is chosen for quality and taste — full stop.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><center><img src="../images/love icon.svg" alt="love" height="30px" width="30px" </center></div>
+      <h3>Made with Care</h3>
+      <p>Small batches. Personal attention. Every box that leaves our kitchen has been handled with genuine love.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon"><center><img src="../images/cake icon.svg" alt="cake" height="30px" width="30px" </center></div>
+      <h3>Fresh, Always</h3>
+      <p>We bake daily. No day-old goods here — what you order is what we bake, as close to delivery as possible.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-header">
+    <h2>A Peek at Our Kitchen</h2>
+    <p>Real bakes, real moments, real love</p>
+    <div class="pink-line"></div>
+  </div>
+  <div class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+    <div class="card"><img class="card-img" src="../images/brownies.jpg" alt="Brownies" style="height:300px;"></div>
+    <div class="card"><img class="card-img" src="../images/pudding1.jpg" alt="Mousse" style="height:300px;"></div>
+    <div class="card"><img class="card-img" src="../images/cookie1.jpg" alt="Cookies" style="height:300px;"></div>
+    <div class="card"><img class="card-img" src="../images/tres_leches.jpg" alt="Tres Leches" style="height:300px;"></div>
+  </div>
+</section>
+
+
+
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" id="cartClose">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">LKR 0.00</span></div>
+    <a href="order.html" class="btn btn-pink" style="width:100%; padding:0.75rem; text-align:center; display:block;">Proceed to Order</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand">Sweet<span>Blush</span></div><p>A home bakery with a big heart. Everything made fresh with love.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="products.html">Menu</a></li><li><a href="order.html">Order</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Our Hours</h4><ul><li><a href="#">Mon - Fri: 8am - 7pm</a></li><li><a href="#">Saturday: 9am - 6pm</a></li><li><a href="#">Sunday: 10am - 4pm</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Sweet Blush Bakery. Made with love and extra sprinkles</p></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>

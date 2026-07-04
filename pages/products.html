@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Sweet Blush</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .filter-bar { display:flex; gap:0.7rem; flex-wrap:wrap; justify-content:center; margin-bottom:2.5rem; }
+    .filter-btn { padding:0.45rem 1.3rem; border-radius:50px; border:1.5px solid var(--pink); background:transparent; color:var(--pink-dark); font-size:0.88rem; font-weight:600; cursor:pointer; transition:all 0.2s; font-family:var(--font-body); }
+    .filter-btn.active, .filter-btn:hover { background:var(--pink-dark); color:white; border-color:var(--pink-dark); }
+    .category-title { font-family:var(--font-display); font-size:1.4rem; color:var(--brown); margin:2.5rem 0 1.2rem; padding-bottom:0.5rem; border-bottom:2px solid var(--pink-light); }
+    .hidden { display:none !important; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">Sweet<span>Blush</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html" class="active">Menu</a></li>
+    <li><a href="order.html">Order</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn btn-pink cart-btn" id="openCart">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <h1>Our Menu</h1>
+  <p>Every item baked fresh daily with love and quality ingredients</p>
+</div>
+
+<section>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="birthday">Birthday Cakes</button>
+    <button class="filter-btn" data-filter="slices">Cake Slices</button>
+    <button class="filter-btn" data-filter="cookies">Cookies</button>
+    <button class="filter-btn" data-filter="puddings">Puddings</button>
+    <button class="filter-btn" data-filter="specials">Specials</button>
+  </div>
+
+  <div id="menuContainer">
+    <!-- Birthday Cakes -->
+    <h3 class="category-title" data-category="birthday"> Birthday Cakes</h3>
+    <div class="cards-grid" data-category="birthday">
+      <div class="card">
+        <img class="card-img" src="../images/cake4.jpg" alt="Sunset Blossom Cake">
+        <div class="card-body"><h3>Sunset Blossom Cake</h3><p>A warm peach textured cake crowned with elegant orange roses.</p><div class="card-footer"><span class="price">LKR 4,500</span><button class="add-btn" onclick="addToCart('Dreamy Drip Cake', 4500, '../images/cake1.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/cake2.jpg" alt="Macaron Drip Cake">
+        <div class="card-body"><h3>Macaron Drip Cake</h3><p>Elegant ivory buttercream with a cascade of pastel macarons and gold splatter.</p><div class="card-footer"><span class="price">LKR 6,200</span><button class="add-btn" onclick="addToCart('Classic Vanilla Cloud', 6200, '../images/cake2.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/cake3.jpg" alt="Floral Cake">
+        <div class="card-body"><h3>Floral Birthday</h3><p>A stunning textured cake ringed with delicate pink milestone blossoms.</p><div class="card-footer"><span class="price">LKR 5,500</span><button class="add-btn" onclick="addToCart('Macaron Drip Cake', 5500, '../images/cake3.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/Cake 5.jpeg" alt="Ruby Ribbon Cake">
+        <div class="card-body"><h3>Ruby Ribbon Cake</h3><p>Minimal white cake decorated with a beautiful deep red ribbon.</p><div class="card-footer"><span class="price">LKR 6,800</span><button class="add-btn" onclick="addToCart('Macaron Drip Cake', 6800, '../images/cake3.jpg')">+</button></div></div>
+      </div>
+    </div>
+
+    <!-- Cake Slices -->
+    <h3 class="category-title" data-category="slices"> Cake Slices</h3>
+    <div class="cards-grid" data-category="slices">
+      <div class="card">
+        <img class="card-img" src="../images/choc_cake.jpg" alt="Chocolate Cake">
+        <div class="card-body"><h3>Dark Chocolate Fudge</h3><p>Three layers of rich chocolate sponge with silky ganache frosting.</p><div class="card-footer"><span class="price">LKR 550</span><button class="add-btn" onclick="addToCart('Dark Chocolate Fudge Slice', 550, '../images/choc_cake.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/cake_piece1.jpg" alt="Cake Piece">
+        <div class="card-body"><h3>Classic Vanilla Cloud</h3><p>Light, airy vanilla sponge with whipped cream and a dusting of powdered sugar.</p><div class="card-footer"><span class="price">LKR 480</span><button class="add-btn" onclick="addToCart('Neapolitan Delight Slice', 480, '../images/cake_piece1.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/cake_piece2.jpg" alt="Strawberry Cake">
+        <div class="card-body"><h3>Strawberry Dream</h3><p>Fluffy pink layers with fresh strawberry frosting — light and lovely.</p><div class="card-footer"><span class="price">LKR 520</span><button class="add-btn" onclick="addToCart('Strawberry Dream Slice', 520, '../images/cake_piece2.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/Red Velvet Strawberry Sensation.jpeg" alt="Red Velvet Cake">
+        <div class="card-body"><h3>Red Velvet Berry</h3><p>Rich velvet cake layered with fresh strawberries and creamy filling.</p><div class="card-footer"><span class="price">LKR 500</span><button class="add-btn" onclick="addToCart('Strawberry Dream Slice', 500, '../images/cake_piece2.jpg')">+</button></div></div>
+      </div>
+    </div>
+
+    <!-- Cookies -->
+    <h3 class="category-title" data-category="cookies"> Cookies</h3>
+    <div class="cards-grid" data-category="cookies">
+      <div class="card">
+        <img class="card-img" src="../images/cookie1.jpg" alt="C&C Cookie">
+        <div class="card-body"><h3>Cookies & Cream</h3><p>Chunky Oreo pieces with white and dark chocolate chips in every bite.</p><div class="card-footer"><span class="price">LKR 280</span><button class="add-btn" onclick="addToCart('Cookies & Cream Cookie', 280, '../images/cookie1.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/cookie2.jpg" alt="Choc Cookie">
+        <div class="card-body"><h3>Double Chocolate Chip</h3><p>Fudgy cocoa base loaded with semi-sweet chocolate chips.</p><div class="card-footer"><span class="price">LKR 260</span><button class="add-btn" onclick="addToCart('Double Chocolate Chip Cookie', 260, '../images/cookie2.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/cookie3.jpg" alt="Red Velvet Cookie">
+        <div class="card-body"><h3>Red Velvet Cookie</h3><p>Vibrant red velvet base with pockets of cream cheese — stunning and delicious.</p><div class="card-footer"><span class="price">LKR 300</span><button class="add-btn" onclick="addToCart('Red Velvet Cookie', 300, '../images/cookie3.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/Cookie 4.jpeg" alt="Chocolate chip Cookie">
+        <div class="card-body"><h3>Chip Delight</h3><p>Soft, buttery cookies loaded with rich chocolate chips.</p><div class="card-footer"><span class="price">LKR 240</span><button class="add-btn" onclick="addToCart('Red Velvet Cookie', 240, '../images/cookie3.jpg')">+</button></div></div>
+      </div>
+    </div>
+
+    <!-- Puddings -->
+    <h3 class="category-title" data-category="puddings"> Puddings & Dessert Cups</h3>
+    <div class="cards-grid" data-category="puddings">
+      <div class="card">
+        <img class="card-img" src="../images/pudding1.jpg" alt="Mousse">
+        <div class="card-body"><h3>Dark Chocolate Mousse</h3><p>Rich, velvety mousse with a whipped swirl — pure chocolate heaven in a glass.</p><div class="card-footer"><span class="price">LKR 420</span><button class="add-btn" onclick="addToCart('Dark Chocolate Mousse', 420, '../images/pudding1.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/pudding2.jpg" alt="Creme Brulee">
+        <div class="card-body"><h3>Classic Caramel pudding</h3><p>Smooth vanilla custard with a perfectly caramelised amber sugar crust.</p><div class="card-footer"><span class="price">LKR 480</span><button class="add-btn" onclick="addToCart('Classic Crème Brûlée', 480, '../images/pudding2.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/pudding3.jpg" alt="Oreo Pudding">
+        <div class="card-body"><h3>Oreo Pudding Delight</h3><p>Layers of Oreo crumbs, chocolate mousse, and ganache — made fresh daily.</p><div class="card-footer"><span class="price">LKR 380</span><button class="add-btn" onclick="addToCart('Oreo Pudding Delight', 380, '../images/pudding3.jpg')">+</button></div></div>
+      </div>
+       <div class="card">
+        <img class="card-img" src="../images/pudding 4.jpeg" alt="Banana Pudding">
+        <div class="card-body"><h3>Mango Bliss</h3><p>Creamy mango pudding topped with fresh mango pieces.</p><div class="card-footer"><span class="price">LKR 400</span><button class="add-btn" onclick="addToCart('Oreo Pudding Delight', 400, '../images/pudding3.jpg')">+</button></div></div>
+      </div>
+    </div>
+
+    <!-- Specials -->
+    <h3 class="category-title" data-category="specials"> Specials</h3>
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px,1fr));" data-category="specials">
+      <div class="card">
+        <img class="card-img" src="../images/tres_leches.jpg" alt="Tres Leches">
+        <div class="card-body"><h3>Rasmalai Tres Leches</h3><p>A fusion of South Asian rasmalai and classic tres leches — soaked, lush, and fragrant.</p><div class="card-footer"><span class="price">LKR 560</span><button class="add-btn" onclick="addToCart('Rasmalai Tres Leches', 560, '../images/tres_leches.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/brownies.jpg" alt="Brownies">
+        <div class="card-body"><h3>Chewy Fudge Brownies</h3><p>Dense, crinkle-topped brownies with that satisfying chew — better than any box mix, ever.</p><div class="card-footer"><span class="price">LKR 320</span><button class="add-btn" onclick="addToCart('Chewy Fudge Brownie', 320, '../images/brownies.jpg')">+</button></div></div>
+      </div>
+      <div class="card">
+        <img class="card-img" src="../images/Tiramisu.jpeg" alt="Tiramisu">
+        <div class="card-body"><h3>Creamy Tiramisu</h3><p>Classic Italian dessert layered with coffee-soaked sponge and cream.</p><div class="card-footer"><span class="price">LKR 450</span><button class="add-btn" onclick="addToCart('Chewy Fudge Brownie', 450, '../images/brownies.jpg')">+</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CART SIDEBAR -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" id="cartClose">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">LKR 0.00</span></div>
+    <a href="order.html" class="btn btn-pink" style="width:100%; padding:0.75rem; text-align:center; display:block;">Proceed to Order</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand">Sweet<span>Blush</span></div><p>Handcrafted sweets made fresh every day with love and care.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="products.html">Menu</a></li><li><a href="order.html">Order</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Our Hours</h4><ul><li>Mon - Fri: 8am - 7pm</li><li>Saturday: 9am - 6pm</li><li>Sunday: 10am - 4pm</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Sweet Blush. Baked with love and extra sprinkles</p></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="../js/main.js"></script>
+<script>
+  // Filter functionality
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('[data-category]').forEach(el => {
+        if (filter === 'all' || el.dataset.category === filter) el.classList.remove('hidden');
+        else el.classList.add('hidden');
+      });
+    });
+  });
+</script>
+</body>
+</html>

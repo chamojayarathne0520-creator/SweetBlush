@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Sweet Blush</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">Sweet<span>Blush</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Menu</a></li>
+    <li><a href="order.html">Order</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn btn-pink cart-btn" id="openCart">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <h1>Get in Touch</h1>
+  <p>We love hearing from our customers — say hello!</p>
+</div>
+
+<section>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>We'd love to hear from you</h2>
+      <p>Have a custom cake request? A question about ingredients? Or just want to say how much you loved your order? We're here and always happy to chat.</p>
+      <div class="contact-detail">
+        <span class="contact-icon"><img src="../images/location-svgrepo-com.svg" alt="Location icon" width="24" height="24"></span>
+        <div><strong>Find Us</strong><span>12 Blossom Lane, Colombo 05, Sri Lanka</span></div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon"><img src="../images/call-ringing-svgrepo-com.svg"alt="Call icon" width="30" height="30"></span>
+        <div><strong>Call / WhatsApp</strong><span>+94 71 940 5616</span></div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon"><img src="../images/mail-svgrepo-com.svg"alt="Email icon" width="24" height="24"> </span>
+        <div><strong>Email</strong><span>hello@sweetblush.lk</span></div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon"><img src="../images/24-hours-svgrepo-com.svg"alt="Hours icon" width="24" height="24"></span>
+        <div><strong>Our Hours</strong><span>Mon-Fri 8am-7pm · Sat 9am-6pm · Sun 10am-4pm</span></div>
+      </div>
+      <div style="margin-top:2rem;">
+        <p style="font-size:0.9rem; color:var(--text-light); margin-bottom:0.8rem;"><strong style="color:var(--brown);">Custom orders</strong> — We take custom cake orders with at least 3 days' notice. Reach out and let's create something beautiful together.</p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Send us a message</h3>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Nisha" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Perera" required></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="you@example.com" required></div>
+        <div class="form-group"><label>Subject</label>
+          <select>
+            <option>General Enquiry</option>
+            <option>Custom Order Request</option>
+            <option>Delivery Question</option>
+            <option>Feedback</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea rows="5" placeholder="Tell us what's on your mind..." required></textarea></div>
+        <button type="submit" class="btn btn-pink" style="width:100%; padding:0.85rem;">Send Message </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pink-light" style="padding:3rem 5%; text-align:center;">
+  <h2 style="font-family:var(--font-display); color:var(--brown); margin-bottom:0.5rem;">Follow Along</h2>
+  <p style="color:var(--text-light); margin-bottom:1.5rem;">Find us on social media for daily bake updates, behind-the-scenes peeks, and seasonal specials.</p>
+  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+    <a href="https://www.instagram.com" class="btn btn-pink"><img src="../images/instagram-svgrepo-com.svg" alt="Instagram" width="15" height="15"> Instagram</a>
+    <a href="https://www.facebook.com" class="btn btn-outline"><img src="../images/facebook-svgrepo-com.svg" alt="Facebook" width="25" height="25"> Facebook</a>
+    <a href="https://www.whatsapp.com" class="btn btn-brown"><img src="../images/whatsapp-svgrepo-com copy.svg" alt="WhatsApp" width="15" height="15"> WhatsApp Us</a>
+  </div>
+</section>
+
+
+
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" id="cartClose">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">LKR 0.00</span></div>
+    <a href="order.html" class="btn btn-pink" style="width:100%; padding:0.75rem; text-align:center; display:block;">Proceed to Order</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand">Sweet<span>Blush</span></div><p>A home bakery with a big heart. Everything made fresh with love.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="products.html">Menu</a></li><li><a href="order.html">Order</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Our Hours</h4><ul><li><a href="#">Mon – Fri: 8am – 7pm</a></li><li><a href="#">Saturday: 9am – 6pm</a></li><li><a href="#">Sunday: 10am – 4pm</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Sweet Blush Bakery. Made with love and extra sprinkles</p></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>
