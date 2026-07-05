@@ -3,6 +3,23 @@ let cart = JSON.parse(localStorage.getItem('bakery_cart') || '[]');
 
 function saveCart() { localStorage.setItem('bakery_cart', JSON.stringify(cart)); }
 
+function getImagePath(img) {
+  let path = (img || '').replace('tiramisu.jpeg', 'Tiramisu.jpeg');
+  const isPageInFolder = window.location.pathname.includes('/pages/');
+
+  if (!path || path.startsWith('http') || path.startsWith('data:') || path.startsWith('/')) {
+    return path || (isPageInFolder ? '../images/hero.jpg' : 'images/hero.jpg');
+  }
+
+  if (isPageInFolder && path.startsWith('images/')) return `../${path}`;
+  if (!isPageInFolder && path.startsWith('../images/')) return path.slice(3);
+  return path;
+}
+
+function getFallbackImagePath() {
+  return getImagePath('images/hero.jpg');
+}
+
 // ===== NAVBAR HAMBURGER =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -31,7 +48,7 @@ function renderCart() {
   } else {
     cartItems.innerHTML = cart.map((item, i) => `
       <div class="cart-item">
-        <img class="cart-item-img" src="${item.img}" alt="${item.name}" onerror="this.src='../images/hero.jpg'">
+        <img class="cart-item-img" src="${getImagePath(item.img)}" alt="${item.name}" onerror="this.src='${getFallbackImagePath()}'">
         <div class="cart-item-info">
           <h4>${item.name}</h4>
           <span>LKR ${item.price} × ${item.qty}</span>
